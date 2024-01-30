@@ -1,0 +1,46 @@
+.socialMediaLinks_btn{
+  width: 41px;
+height: 41px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 2px 20px #0000001A;
+border: none;
+font-size: 13px;
+border-radius: 50%;
+}
+footer{
+  color: #5E6282;
+  .copyRights{
+    font-size: 13px;
+    font-weight: 500;
+  }
+  h6{
+    font-size: 21px;
+    font-weight:700;
+    color: #080809;
+  }
+  a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .linkToApps{
+    img{
+      width: 107px;
+      height: 35px;
+      cursor: pointer;
+      border-radius: 18px;
+    }
+  }
+
+}
+.discoverHeader{
+  font-size: 20px;
+  font-weight: 500;
+
+  margin: 26px 0px;
+}
+
+.companyBrief{
+  font-size: 13px;
+}

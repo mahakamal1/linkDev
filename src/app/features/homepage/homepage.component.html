@@ -1,0 +1,209 @@
+
+<!-- hearoSection -->
+<section class="hero">
+  <img src="assets/imgs/herosection/hero.png">
+  <div class="container">
+  <p-carousel [value]="slides"
+  [styleClass]="'border-0'"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  [style]="{'background':'transparent'}"
+   [numVisible]="1" [numScroll]="1"
+   [showNavigators]="false"
+    [indicatorsContentClass]="'d-flex align-items-center justify-content-lg-start justify-content-center'"
+   >
+      <ng-template let-slide pTemplate="item">
+              <div class="row">
+                  <div class="col-lg-7 h-100 textContent">
+                    <h5 class="textContent_categoryText" [ngStyle]="{'color':'#'+slide.colorCode}">
+                      {{slide.category | uppercase}}
+                    </h5>
+                    <h1 class="textContent_headerText">
+                      25 Years of <br> Business Growth
+                    </h1>
+                    <p class="textContent_briefText">
+                      {{slide.brief}}
+                    </p>
+                    <div class="textContent_discoverMore d-flex align-items-center justify-content-md-start justify-content-between ">
+                      <button class="textContent_discoverMore_findMoreBtn">
+                        Find out more
+                      </button>
+                      <button class="textContent_discoverMore_youtube d-flex align-items-center">
+                        <img src="assets/imgs/herosection/youtube.png" class="me-3">
+                        Play Demo
+                      </button>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                  <img [src]="slide.imgUrl" [alt]="slide.title" style="object-fit: fill;width: 100%"/>
+              </div>
+              </div>
+      </ng-template>
+  </p-carousel>
+  </div>
+</section>
+<!-- end hero Section -->
+
+<!-- section discover -->
+<section class="sectionDiscover">
+  <div class="overflow-hidden">
+    <div class="row">
+        <div class="col-lg-6 imgContainer d-flex flex-lg-row flex-column justify-content-lg-end  justify-content-lg-end align-items-center  p-0">
+          <div class="d-flex  flex-lg-row flex-column align-items-center justify-content-lg-end  customMargin">
+            <div>
+              <div class="position-relative" (mouseenter)="showMore1=true" (mouseleave)="showMore1=false">
+                <img src="assets/imgs/digitalProductivity/Envision.png">
+                <div class="position-absolute titleText d-flex align-items-end justify-content-start ps-4">
+                  <p>
+                    Transformation
+                  </p>
+                </div>
+                <div *ngIf="showMore1" class="position-absolute showMoreText  d-flex align-items-end justify-content-start ps-4">
+                  <a>
+                    <i class="fa-solid fa-arrow-right"></i> Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+           <div>
+            <div class="position-relative" (mouseenter)="showMore2=true" (mouseleave)="showMore2=false">
+              <img src="assets/imgs/digitalProductivity/Envision.png">
+              <div class="position-absolute titleText d-flex align-items-end justify-content-start ps-4">
+                <p>
+                  Envision
+                </p>
+              </div>
+              <div *ngIf="showMore2" class="position-absolute showMoreText  d-flex d-flex align-items-end justify-content-start ps-4">
+                <a>
+                  <i class="fa-solid fa-arrow-right"></i> &nbsp; Read More
+                </a>
+              </div>
+            </div>
+            <div class="position-relative" (mouseenter)="showMore3=true" (mouseleave)="showMore3=false">
+              <img src="assets/imgs/digitalProductivity/Dynamics365.png">
+              <div class="position-absolute titleText d-flex align-items-end justify-content-start ps-4">
+                <p>
+                  Dynamics 365
+                </p>
+              </div>
+              <div *ngIf="showMore3" class="position-absolute showMoreText  d-flex align-items-end justify-content-start ps-4">
+                <a>
+                  <i class="fa-solid fa-arrow-right"></i> &nbsp; Read More
+                </a>
+              </div>
+            </div>
+           </div>
+          </div>
+          <div class="custombg h-100">
+            <div class="position-relative" (mouseenter)="showMore4=true" (mouseleave)="showMore4=false">
+              <img src="assets/imgs/digitalProductivity/CraftyMind.png">
+              <div class="position-absolute titleText d-flex  align-items-end justify-content-start ps-4">
+                <p>
+                  Crafty Mind
+                </p>
+              </div>
+              <div  *ngIf="showMore4" class="position-absolute showMoreText   d-flex align-items-end justify-content-start ps-4">
+                <a>
+                  <i class="fa-solid fa-arrow-right"></i> &nbsp; Read More
+                </a>
+              </div>
+            </div>
+            <div class="position-relative"(mouseenter)="showMore5=true" (mouseleave)="showMore5=false" >
+              <img src="assets/imgs/digitalProductivity/Services.png">
+              <div class="position-absolute titleText d-flex align-items-end justify-content-start ps-4">
+                <p>
+                  Services
+                </p>
+              </div>
+              <div *ngIf="showMore5" class="position-absolute showMoreText  d-flex align-items-end justify-content-start ps-4">
+                <a>
+                  <i class="fa-solid fa-arrow-right"></i> &nbsp; Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-6 mt-lg-5 textContainer text-lg-end text-center">
+          <h2 >
+            We Deliver <br> Digital Productivity
+          </h2>
+          <p class="text-lg-end text-center">
+            We craft technology solutions that digitally bond and transform the productivity of our customers and their citizens, workers, consumers and partners.
+          </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end section Discover -->
+
+<!-- media section -->
+<section class="media-section">
+  <div class="container text-center">
+    <h6>
+      Media
+    </h6>
+    <h4>
+      Top News
+    </h4>
+    <!-- filter btns -->
+    <div class="col-md-10 d-flex justify-content-between mx-auto flex-wrap px-2">
+      <input type="radio"  class="btn-check" name="options" id="option0" autocomplete="off"  (change)='filter(selectedCategory)' [(ngModel)]="selectedCategory" [value]="0" [checked]="selectedCategory === 0">
+      <label class="radioBtnSelected" [ngClass]="selectedCategory===0?'selected':''" for="option0">All news</label>
+      <ng-container *ngFor="let cat of newsCategoryArray?.newsCategory" >
+        <input type="radio"  class="btn-check" name="options" [id]="'option'+cat?.id" autocomplete="off" (change)='filter(selectedCategory)' [(ngModel)]="selectedCategory" [value]="cat.id" [checked]="selectedCategory === cat.id">
+        <label class="radioBtnSelected" [ngClass]="selectedCategory === cat.id?'selected':''"  [for]="'option'+cat?.id">{{cat?.name}}</label>
+      </ng-container>
+    </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col"  *ngFor="let item of newsArray | slice :0:showAll? newsArray?.length : 6;let i=index">
+      <div class="card h-100" *ngIf="newsArray?.length!=0 ">
+        <img [src]="item.urlToImage"  class="card-img-top"  alt="...">
+        <div class="card-body text-start">
+          <a class="card-title" [title]="item.title" [routerLink]="['/news/details',i]">
+            {{  item.title.length > 50 ?  (item.title| slice : 0 : 50)+'....' : item.title}}
+          </a>
+          <div class="card-text">
+            <p class="dateContainer">
+              <i class="fa-regular fa-calendar"></i>
+              {{item.publishedDate | date : 'mediumDate'}}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="catalogBadge text-center">
+                {{getCatalogname(item.categoryID)}}
+              </p>
+              <div class="btnsContainer">
+                <button>
+                  <i class="fa-regular fa-heart me-3"></i>
+                </button>
+                <p-menu #menu [model]="items" [popup]="true" [appendTo]="'body'" >
+                  <ng-template pTemplate="item" let-item>
+                    <a  class="p-menuitem-link d-flex justify-content-between align-items-center">
+                        <div>
+                            <span [class]="item.icon"></span>
+                        </div>
+                    </a>
+                </ng-template>
+                </p-menu>
+                <button type="button" (click)="menu.toggle($event)" >
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto" *ngIf="newsArray?.length ==0 ">
+      no results
+    </div>
+  </div>
+  <div class=" mx-auto text-center" *ngIf="newsArray?.length! > 6">
+    <button (click)="showAll = !showAll" class="showMoreBtnToggler">
+      {{showAll ? 'show less' : 'View All News'}}
+    </button>
+  </div>
+  </div>
+
+</section>
+<!-- end of media section -->

@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <div class="card mb-3">
+    <img [src]="newsitem.urlToImage" class="card-img-top" alt="imgContainer">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{newsitem.title}}</h5>
+      <p class="card-text">
+        {{newsitem.content}}
+      </p>
+      <p class="card-text"><strong class="text-body-secondary">{{newsitem.publishedDate | date :'mediumDate'}}</strong></p>
+    </div>
+  </div>
+
+</div>
